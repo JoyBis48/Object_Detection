@@ -119,8 +119,7 @@ predictions using a single fully connected layer.
 > along with its index in the .yaml file, which we want to be detected
 > as an object during Yolov5 detection.
 >
-> ![](media/image1.jpg){width="5.417390638670166in"
-> height="3.7326334208223972in"}
+
 >
 > The modified coco128.yaml was renamed as custom_coco128.yaml and then
 > uploaded to the Google Colab alongside yolov5 repository, to be used
@@ -135,8 +134,7 @@ predictions using a single fully connected layer.
 > dependencies were installed using the "%pip install -qr
 > requirements.txt" command.
 
-![](media/image2.jpg){width="6.268055555555556in"
-height="2.783333333333333in"}
+
 
 ## Training process
 
@@ -200,11 +198,8 @@ height="2.783333333333333in"}
 > /content/Traffic_Image.jpg" command. The resulting image was then
 > displayed in the notebook using cv2_imshow function.
 >
-> ![](media/image3.jpg){width="6.268055555555556in"
-> height="3.134027777777778in"}
->
-> The above image is the result of the detection done by Yolov5 using
-> the weight that got created after the training process.
+
+
 
 ## Feature Extraction 
 
@@ -218,9 +213,7 @@ height="2.783333333333333in"}
 > which are stored in the form of tensors in Yolov5 after the training
 > is completed.
 >
-> ![](media/image4.jpg){width="6.268055555555556in"
-> height="4.932638888888889in"}
->
+
 > These coordinates are then inputted for the purpose of cropping the
 > bounding box of the detected object. The cropped images are then
 > resized to the size 224x224. This is done to ensure the features that
@@ -228,14 +221,12 @@ height="2.783333333333333in"}
 > gave a total of 11 object count. The last three detection having
 > confidence \<0.6 were neglected.
 >
-> ![](media/image5.jpg){width="5.725in" height="5.558333333333334in"}
+
 >
 > The cropped images were then displayed in the notebook. Going through
 > the cropped images it was evident that the number of objects detected
 > having confidence \>0.6 were 4 cars, 1 auto, 1 two wheeler and two
-> number plates. The displayed images are shown below.
->
-> ![](media/image6.jpg){width="1.725in" height="5.225in"}
+> number plates. 
 >
 > After selecting one of each class from the detected object and
 > resizing it, we are left with three object namely car, auto and two
@@ -256,16 +247,8 @@ height="2.783333333333333in"}
 > extracted using the size attribute. Finally, the aspect ratio of the
 > inverted binary mask is calculated by dividing the width by the
 > height, and is then printed to the console.
->
-> ![](media/image7.jpg){width="5.633333333333334in" height="5.625in"}
->
-> The output is then displayed using the show() function, as given
-> below:-
->
-> ![](media/image8.jpg){width="2.278261154855643in"
-> height="3.5835793963254594in"}
 
-### 3.6.2 Performing Colour Extraction {#performing-colour-extraction .unnumbered}
+### 3.6.2 Performing Colour Extraction 
 
 > For colour extraction, KMeans method was used to extract the dominant
 > colour of the detected object. First, the resized image is loaded and
@@ -275,25 +258,15 @@ height="2.783333333333333in"}
 > model having one cluster is fit to the pixel values and the centroid
 > of that cluster is taken to be the dominant colour. The dominant
 > colour is then displayed in the Colab notebook using .show() function.
->
-> ![](media/image9.jpg){width="4.9in" height="5.816666666666666in"}
 
-The output thus obtained is shown below in the order of index 0, 4 and
-5.
 
-![](media/image10.jpg){width="1.5043482064741907in"
-height="3.592858705161855in"}
-
-1.  []{#_Toc132332927 .anchor}Performing an unique feature extraction
+1. Performing an unique feature extraction
     (here, Number Plate)
 
 > This feature extraction was already done during the initial detection
 > of objects in the traffic image. It was already included in the
 > custom_coco128.yaml dataset as a class, and has been extracted in the
 > form of a resized image in the later stage.
->
-> ![](media/image11.jpg){width="4.382609361329834in"
-> height="3.386738845144357in"}
 
 ## Problems faced during the whole coding process
 
